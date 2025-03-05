@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="482.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sntiago.java.listasenlazdasfx.listas_enlazadas_fx.controller.ListaViewController">
+    <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #333399};">
+         <children>
+              <HBox alignment="TOP_CENTER" prefHeight="139.0" prefWidth="699.0" spacing="15.0">
+                  <opaqueInsets>
+                      <Insets />
+                  </opaqueInsets>
+                  <children>
+                      <Label text="INGRESA UN ELEMENTO" textFill="WHITE">
+                          <font>
+                              <Font name="Franklin Gothic Medium" size="18.0" />
+                          </font>
+                          <HBox.margin>
+                              <Insets />
+                          </HBox.margin>
+                      </Label>
+                      <TextField fx:id="elementoTxt" />
+                  <VBox alignment="TOP_CENTER" spacing="10.0">
+                     <children>
+                        <ComboBox fx:id="comboDireccion" prefWidth="150.0" promptText="Direccion" visibleRowCount="2" />
+                        <ComboBox fx:id="comboLista" layoutX="10.0" layoutY="10.0" prefWidth="150.0" promptText=" Seleccionar Lista" visibleRowCount="2" />
+                     </children>
+                  </VBox>
+                      <Button fx:id="buttonAgregar" mnemonicParsing="false" onAction="#agregar" text="AGREGAR" />
+                  <Button mnemonicParsing="false" onAction="#limpiarLista" text="LIMPIAR" />
+                  </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+              </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Label text="OPERACIONES" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboOperaciones" prefHeight="25.0" prefWidth="201.0" />
+                  <Button mnemonicParsing="false" onAction="#ejecutarOp" text="Ejecutar" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <ScrollPane fx:id="scrollPane" prefHeight="358.0" prefWidth="699.0">
+         <content>
+                <Canvas fx:id="canvas" height="274.0" width="150.0" />
+         </content>
+      </ScrollPane>
+    </children>
+</VBox>
