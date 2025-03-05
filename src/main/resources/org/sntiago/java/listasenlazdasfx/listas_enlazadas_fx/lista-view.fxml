@@ -37,7 +37,7 @@
                   <Insets top="10.0" />
                </padding>
               </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>
                   <Label text="OPERACIONES" textFill="WHITE">
                      <font>

@@ -81,7 +81,11 @@ public class ListaViewController {
     private void dibujarListaConPosicion(ListaEnlazada<Integer> listaDibujar, double x, double y, Color color) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Nodo<Integer> auxiliar = listaDibujar.getPtr();
-
+        if (auxiliar != null) {
+            gc.setFill(Color.GREEN);
+            gc.fillText("PTR", 30, y - 30);
+            gc.strokeLine(30, y - 25, 50, y - 5);
+        }
         while (auxiliar != null) {
             int valor = auxiliar.getComponente();
             gc.setFill(color);
@@ -94,6 +98,10 @@ public class ListaViewController {
                 gc.strokeLine(x + 60, y, x + 100, y);
                 gc.strokeLine(x + 90, y - 5, x + 100, y);
                 gc.strokeLine(x + 90, y + 5, x + 100, y);
+            } else {
+                gc.setFill(Color.RED);
+                gc.fillText("T", x + 90, y - 30);
+                gc.strokeLine(x + 60, y - 5, x + 90, y - 25);
             }
             x += 100;
             auxiliar = auxiliar.siguiente;
@@ -111,7 +119,6 @@ public class ListaViewController {
         } else {
             lista2.ingresar(new Nodo<>(valor), direccion);
         }
-
         dibujar();
         ajustarCanvas();
     }
@@ -134,6 +141,7 @@ public class ListaViewController {
         dibujar();
         contador++;
     }
+
     private static ListaEnlazada<Integer> comparar(ListaEnlazada<Integer> lista1, ListaEnlazada<Integer> lista2) {
         ListaEnlazada<Integer> listaResultado = new ListaEnlazada<>();
         Nodo<Integer> aux = lista1.getPtr();
