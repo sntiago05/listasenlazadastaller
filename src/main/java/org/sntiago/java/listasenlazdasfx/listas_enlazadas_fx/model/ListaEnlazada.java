@@ -17,8 +17,8 @@ public class ListaEnlazada<T> {
         return t;
     }
 
-    public void ingresar(Nodo<T> nodo, Direccion dir) {
-        if (buscarElemento(nodo.getComponente()) != null) return;
+    public boolean ingresar(Nodo<T> nodo, Direccion dir) {
+        if (buscarElemento(nodo.getComponente()) != null) return false;
         if (ptr == null) {
             ptr = nodo;
             t = ptr;
@@ -29,6 +29,7 @@ public class ListaEnlazada<T> {
                 ingresarPorDerecha(nodo);
             }
         }
+        return true;
     }
 
     private void ingresarPorIzquierda(Nodo<T> nodo) {

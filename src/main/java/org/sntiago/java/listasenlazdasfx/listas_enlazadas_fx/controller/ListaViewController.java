@@ -114,13 +114,16 @@ public class ListaViewController {
         if (listaSeleccionada == null || elementoTxt.getText().isEmpty()) return;
         int valor = Integer.parseInt(elementoTxt.getText());
         Direccion direccion = comboDireccion.getValue();
+        boolean ingreso = false;
         if (listaSeleccionada.equals("Lista 1")) {
-            lista1.ingresar(new Nodo<>(valor), direccion);
+            if (lista1.ingresar(new Nodo<>(valor), direccion)) ingreso = true;
         } else {
-            lista2.ingresar(new Nodo<>(valor), direccion);
+            if (lista2.ingresar(new Nodo<>(valor), direccion)) ingreso = true;
         }
-        dibujar();
-        ajustarCanvas();
+        if (ingreso) {
+            ajustarCanvas();
+            dibujar();
+        }
     }
 
     @FXML
